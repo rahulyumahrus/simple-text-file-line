@@ -1,0 +1,17 @@
+{
+  "name": "simple-text-file-line",
+  "version": "0.1.0",
+  "description": "Async line reader for text files with configurable buffering and BOM detection",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
