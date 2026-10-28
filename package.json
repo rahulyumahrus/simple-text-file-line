@@ -1,6 +1,6 @@
 {
   "name": "simple-text-file-line",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Async line reader for text files with configurable buffering and BOM detection",
   "type": "module",
   "main": "src/index.js",
