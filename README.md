@@ -25,3 +25,10 @@ Line-by-line file reads in Node usually pull in a third-party package or rely on
 - If no BOM is present, the `encoding` option (default `utf-8`) is used. Pass an explicit value to read legacy single-byte encodings.
 - The `bufferSize` option controls the read chunk size. The default of 64 KiB is a reasonable middle ground; smaller values are useful for testing multi-byte character handling but will slow real-world reads.
 - When a multi-byte character falls across two read chunks, `TextDecoder`'s streaming mode is used so the partial bytes are held until the remainder arrives.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
